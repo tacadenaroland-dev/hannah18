@@ -255,49 +255,8 @@
     </div>
     <div class="floral-divider"><img src="images/floral-divider.png" alt="" /></div>
 
-    <form class="rsvp-form reveal" data-delay="200" id="rsvp-form">
-      <div class="form-group">
-        <label class="form-label" for="rsvp-name">Full Name *</label>
-        <input type="text" id="rsvp-name" class="form-input" placeholder="Your distinguished name" />
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="rsvp-email">Email Address</label>
-        <input type="email" id="rsvp-email" class="form-input" placeholder="your@email.com" />
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Will you be attending? *</label>
-        <div class="attend-buttons">
-          <button type="button" class="attend-btn" data-value="accept">Joyfully Accepts</button>
-          <button type="button" class="attend-btn" data-value="decline">Regretfully Declines</button>
-        </div>
-      </div>
-
-      <div class="form-group hidden" id="guests-group">
-        <label class="form-label" for="rsvp-guests">Number of Guests</label>
-        <select id="rsvp-guests" class="form-input">
-          <option value="0">Just myself</option>
-          <option value="1">1 additional guest</option>
-          <option value="2">2 additional guests</option>
-          <option value="3">3 additional guests</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="rsvp-message">Message for the Debutante</label>
-        <textarea id="rsvp-message" class="form-input" rows="3" placeholder="A few words of well wishes..."></textarea>
-      </div>
-
-      <div class="form-submit">
-        <button type="submit" class="cta-button">Send Response</button>
-      </div>
-    </form>
-
-    <div class="thank-you hidden" id="thank-you">
-      <p class="font-script section-script" style="font-size:2rem; margin-bottom:1rem;">Thank You</p>
-      <h2 class="section-title" style="font-size:1.75rem; margin-bottom:1rem;">Your response has been received</h2>
-      <p class="section-desc">We look forward to celebrating with you, <span id="thank-name"></span>.</p>
+    <div class="rsvp-embed reveal" data-delay="200">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf3DOLmNFrRhe4e7y7009MeibwGSmUajurIbSyfHoA3Y_Td-w/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
   </section>
 

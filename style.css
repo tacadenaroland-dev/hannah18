@@ -91,7 +91,7 @@ nav a:hover, nav a.active {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 2rem 1rem;
+  padding: 5rem 1rem;
   background: var(--cream);
 }
 
@@ -459,91 +459,14 @@ section {
 }
 
 /* ── RSVP ── */
-.rsvp-form {
-  max-width: 32rem;
+.rsvp-embed {
+  max-width: 40rem;
   margin: 0 auto;
 }
 
-.form-group {
-  margin-bottom: 2rem;
-}
-
-.form-label {
-  display: block;
-  font-family: 'Playfair Display', serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.5rem;
-}
-
-.form-input {
-  width: 100%;
-  background: transparent;
+.rsvp-embed iframe {
   border: none;
-  border-bottom: 1px solid var(--gold-light);
-  outline: none;
-  padding: 0.75rem 0.25rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem;
-  color: var(--foreground);
-  transition: border-color 0.3s;
-}
-
-.form-input::placeholder {
-  color: var(--muted);
-  opacity: 0.6;
-}
-
-.form-input:focus {
-  border-bottom-color: var(--gold);
-}
-
-textarea.form-input {
-  resize: none;
-}
-
-select.form-input {
-  cursor: pointer;
-  -webkit-appearance: none;
-}
-
-.attend-buttons {
-  display: flex;
-  gap: 1rem;
-}
-
-.attend-btn {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--gold-light);
-  background: transparent;
-  font-family: 'Playfair Display', serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  color: var(--foreground);
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.attend-btn:hover {
-  border-color: var(--gold);
-}
-
-.attend-btn.selected {
-  background: var(--gold);
-  color: var(--cream);
-  border-color: var(--gold);
-}
-
-.attend-btn:active {
-  transform: scale(0.97);
-}
-
-.form-submit {
-  text-align: center;
-  padding-top: 1rem;
+  border-radius: 2px;
 }
 
 .hidden { display: none; }

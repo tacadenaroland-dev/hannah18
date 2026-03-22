@@ -47,48 +47,6 @@ function initNav() {
   });
 }
 
-// ── Toast ──
-function showToast(message) {
-  const toast = document.getElementById('toast');
-  toast.textContent = message;
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 3000);
-}
-
-// ── RSVP Form ──
-function initRSVP() {
-  const form = document.getElementById('rsvp-form');
-  const thankYou = document.getElementById('thank-you');
-  const guestsGroup = document.getElementById('guests-group');
-  const attendBtns = document.querySelectorAll('.attend-btn');
-  let attending = '';
-
-  attendBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      attendBtns.forEach((b) => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      attending = btn.dataset.value;
-      if (attending === 'accept') {
-        guestsGroup.classList.remove('hidden');
-      } else {
-        guestsGroup.classList.add('hidden');
-      }
-    });
-  });
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('rsvp-name').value.trim();
-    if (!name || !attending) {
-      showToast('Please fill in your name and attendance.');
-      return;
-    }
-    form.classList.add('hidden');
-    thankYou.classList.remove('hidden');
-    document.getElementById('thank-name').textContent = name;
-    showToast('Thank you for your response!');
-  });
-}
 
 // ── Countdown ──
 function initCountdown() {
@@ -126,5 +84,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initNav();
   initCountdown();
-  initRSVP();
 });
