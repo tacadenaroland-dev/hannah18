@@ -84,6 +84,7 @@
       <p class="section-desc">Moments captured through the years — a journey of grace, joy, and becoming.</p>
     </div>
     <div class="floral-divider"><img src="images/floral-divider.png" alt="" /></div>
+    <p class="gallery-hint reveal" data-delay="100">Tap a photo to view the slideshow</p>
     <div class="gallery-grid">
       <div class="gallery-item reveal" data-delay="0"><img src="images/gallery/hannah_1.jpeg" alt="Hannah Mae 1" /></div>
       <div class="gallery-item reveal" data-delay="60"><img src="images/gallery/hannah_2.jpeg" alt="Hannah Mae 2" /></div>
@@ -304,6 +305,17 @@
     <p class="font-script footer-name">Hannah Mae Caido</p>
     <p class="footer-detail">April 11, 2026 · Northern Spot Resort (Cabungan, Anda, Pangasinan)</p>
   </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous">&#10094;</button>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Next">&#10095;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="" />
+      <span class="lightbox-counter" id="lightbox-counter"></span>
+    </div>
+  </div>
 
   <!-- Toast -->
   <div class="toast" id="toast"></div>

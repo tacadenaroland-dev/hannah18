@@ -66,9 +66,87 @@ function initCountdown() {
   setInterval(update, 1000);
 }
 
+// ── Lightbox / Slideshow ──
+function initLightbox() {
+  const lightbox  = document.getElementById('lightbox');
+  const lbImg     = document.getElementById('lightbox-img');
+  const lbCounter = document.getElementById('lightbox-counter');
+  const btnClose  = document.getElementById('lightbox-close');
+  const btnPrev   = document.getElementById('lightbox-prev');
+  const btnNext   = document.getElementById('lightbox-next');
+
+  const images = Array.from(document.querySelectorAll('.gallery-item img'));
+  let current = 0;
+
+  function open(index) {
+    current = index;
+    update();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function update() {
+    lbImg.src = images[current].src;
+    lbImg.alt = images[current].alt;
+    lbCounter.textContent = (current + 1) + ' / ' + images.length;
+  }
+
+  function next() {
+    current = (current + 1) % images.length;
+    update();
+  }
+
+  function prev() {
+    current = (current - 1 + images.length) % images.length;
+    update();
+  }
+
+  // Click on gallery images
+  images.forEach((img, i) => {
+    img.closest('.gallery-item').addEventListener('click', () => open(i));
+  });
+
+  btnClose.addEventListener('click', close);
+  btnPrev.addEventListener('click', prev);
+  btnNext.addEventListener('click', next);
+
+  // Close on backdrop click
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) close();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+  });
+
+  // Swipe support for mobile
+  let touchStartX = 0;
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (e) => {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(diff) > 50) {
+      if (diff < 0) next();
+      else prev();
+    }
+  }, { passive: true });
+}
+
 // ── Init ──
 document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initNav();
   initCountdown();
+  initLightbox();
 });
