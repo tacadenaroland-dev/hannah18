@@ -173,6 +173,41 @@ nav a:hover, nav a.active {
   background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
 }
 
+/* ── Countdown ── */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .countdown { gap: 2.5rem; }
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.countdown-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.35rem;
+}
+
 .details-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -296,19 +331,15 @@ section {
 /* ── Gallery ── */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  max-width: 72rem;
+  max-width: 60rem;
   margin: 0 auto;
   padding: 0 0.5rem;
 }
 
-@media (min-width: 640px) {
-  .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-}
-
-@media (min-width: 1024px) {
-  .gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+@media (min-width: 768px) {
+  .gallery-grid { gap: 1.5rem; }
 }
 
 .gallery-item {
@@ -402,7 +433,7 @@ section {
 
 .grid-number {
   font-family: 'Playfair Display', serif;
-  font-size: 0.75rem;
+  font-size: 1rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
