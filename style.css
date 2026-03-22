@@ -22,6 +22,7 @@
 }
 
 html {
+  font-size: 106%;
   scroll-behavior: smooth;
 }
 
@@ -68,7 +69,7 @@ nav ul {
 
 nav a {
   font-family: 'Playfair Display', serif;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
@@ -118,12 +119,12 @@ nav a:hover, nav a.active {
 }
 
 .hero-invite {
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: var(--gold);
 }
 
 .hero-name {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(3.5rem, 9vw, 7rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 0.95;
@@ -131,7 +132,7 @@ nav a:hover, nav a.active {
 }
 
 .hero-birthday {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(3rem, 7vw, 5rem);
   margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
@@ -155,7 +156,7 @@ nav a:hover, nav a.active {
   align-items: center;
   gap: 1rem;
   font-family: 'Playfair Display', serif;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
@@ -191,7 +192,7 @@ nav a:hover, nav a.active {
 
 .detail-label {
   font-family: 'Playfair Display', serif;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);
@@ -200,12 +201,12 @@ nav a:hover, nav a.active {
 
 .detail-value {
   font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
 .detail-sub {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--muted);
   margin-top: 0.25rem;
 }
@@ -213,7 +214,7 @@ nav a:hover, nav a.active {
 .cta-button {
   display: inline-block;
   font-family: 'Playfair Display', serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   padding: 1rem 2.5rem;
@@ -254,7 +255,7 @@ section {
 }
 
 .section-script {
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: var(--gold);
 }
 
@@ -263,14 +264,14 @@ section {
 .section-script.purple { color: var(--purple-soft); }
 
 .section-title {
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-size: clamp(2.25rem, 5.5vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
 .section-desc {
   color: var(--muted);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   max-width: 32rem;
   margin: 0.75rem auto 0;
 }
@@ -290,6 +291,59 @@ section {
 
 @media (min-width: 768px) {
   .floral-divider img { width: 16rem; }
+}
+
+/* ── Gallery ── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid var(--gold-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px hsla(30, 10%, 25%, 0.1);
+}
+
+.gallery-placeholder {
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, var(--champagne) 0%, var(--cream) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-placeholder span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  opacity: 0.7;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ── Grid ── */
@@ -348,7 +402,7 @@ section {
 
 .grid-number {
   font-family: 'Playfair Display', serif;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
@@ -361,13 +415,13 @@ section {
 
 .grid-name {
   font-family: 'Playfair Display', serif;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 600;
   line-height: 1.2;
 }
 
 .grid-role {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--muted);
   font-style: italic;
   margin-top: 0.25rem;
@@ -386,7 +440,7 @@ section {
 .form-label {
   display: block;
   font-family: 'Playfair Display', serif;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
@@ -401,7 +455,7 @@ section {
   outline: none;
   padding: 0.75rem 0.25rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--foreground);
   transition: border-color 0.3s;
 }
@@ -435,7 +489,7 @@ select.form-input {
   border: 1px solid var(--gold-light);
   background: transparent;
   font-family: 'Playfair Display', serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 0.05em;
   color: var(--foreground);
   cursor: pointer;
@@ -477,14 +531,14 @@ footer {
 }
 
 footer .footer-name {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: var(--gold);
   margin-bottom: 0.5rem;
 }
 
 footer .footer-detail {
   font-family: 'Playfair Display', serif;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--muted);
@@ -515,7 +569,7 @@ footer .footer-detail {
   background: var(--gold-dark);
   color: var(--cream);
   font-family: 'Playfair Display', serif;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   letter-spacing: 0.1em;
   padding: 0.75rem 2rem;
   border-radius: 2px;
