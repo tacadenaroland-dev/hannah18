@@ -14,21 +14,8 @@ function initScrollReveal() {
   reveals.forEach((el) => observer.observe(el));
 }
 
-// ── Nav hide on scroll ──
+// ── Nav active link highlight ──
 function initNav() {
-  const nav = document.querySelector('nav');
-  let lastScroll = 0;
-  window.addEventListener('scroll', () => {
-    const current = window.scrollY;
-    if (current > 100 && current > lastScroll) {
-      nav.classList.add('hidden-nav');
-    } else {
-      nav.classList.remove('hidden-nav');
-    }
-    lastScroll = current;
-  });
-
-  // Active link highlight
   const sections = document.querySelectorAll('section[id]');
   const links = document.querySelectorAll('nav a');
   window.addEventListener('scroll', () => {
