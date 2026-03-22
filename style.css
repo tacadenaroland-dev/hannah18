@@ -67,6 +67,22 @@ nav ul {
   flex-wrap: wrap;
 }
 
+/* nav 3x3 */
+@media (max-width: 600px) {
+  nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.15rem 0;
+    text-align: center;
+    padding: 0.6rem 0.5rem;
+  }
+
+  nav a {
+    padding: 0.35rem 0.25rem;
+    font-size: 0.65rem;
+  }
+}
+
 nav a {
   font-family: 'Playfair Display', serif;
   font-size: 0.75rem;
@@ -80,6 +96,7 @@ nav a {
 
 nav a:hover, nav a.active {
   color: var(--gold);
+  font-weight: 700;
 }
 
 /* ── Hero ── */
